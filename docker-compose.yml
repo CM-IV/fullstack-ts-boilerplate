@@ -8,20 +8,22 @@ services:
       - PORT=5000
     ports:
       - '5000:5000'
-    working_dir: /root/frontend
+    working_dir: /home/cmiv/Documents/code_prod/dev/fullstack-ts-boilerplate/frontend
     volumes:
-      - ./frontend:/root/frontend:cached
+      - ./frontend:/home/cmiv/Documents/code_prod/dev/fullstack-ts-boilerplate/frontend:cached
+      - /home/cmiv/Documents/code_prod/dev/fullstack-ts-boilerplate/frontend/node_modules
   api:
     build: ./api
     command: sh -c "npm install && npm run dev"
     environment:
       - NODE_ENV=development
-      - PORT=3000
+      - PORT=7000
     ports:
-      - '3000:3000'
-    working_dir: /root/api
+      - '7000:7000'
+    working_dir: /home/cmiv/Documents/code_prod/dev/fullstack-ts-boilerplate/api
     volumes:
-      - ./api:/root/api:cached
+      - ./api:/home/cmiv/Documents/code_prod/dev/fullstack-ts-boilerplate/api:cached
+      - /home/cmiv/Documents/code_prod/dev/fullstack-ts-boilerplate/api/node_modules
   db:
     image: postgres
     restart: always
