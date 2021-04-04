@@ -16,7 +16,7 @@
     "parcel"
   ],
   "author": "CMIV",
-  "license": "MIT",
+  "license": "GPLv3",
   "bugs": {
     "url": "https://github.com/CM-IV/ts-parcel-boilerplate/issues"
   },
